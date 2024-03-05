@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+
+    <h1>Text Summarizer</h1>
+
+    <form action="/" method="post">
+        <label for="text">Enter Text:</label>
+        <textarea id="text" name="text" rows="4" cols="50" required></textarea>
+        <label for="max">Enter Max Length:</label>
+        <input type="number" id="max" name="max" min="10" required>
+        <label for="min">Enter Min Length:</label>
+        <input type="number" id="min" name="min" min="1" required>
+        <button type="submit">Summarize</button>
+    </form>
+
+    {% if summary %}
+    <form>
+        <div style="margin-top: 20px;">
+            <h2>Summary</h2>
+            <p>{{ summary }}</p>
+        </div>
+    </form>
+    {% endif %}
+
+</body>
+</html>
